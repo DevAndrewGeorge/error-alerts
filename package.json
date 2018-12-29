@@ -1,0 +1,23 @@
+{
+  "name": "error-alerts",
+  "version": "0.1.0",
+  "description": "",
+  "main": "Alerter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevAndrewGeorge/error-alerts.js.git"
+  },
+  "author": "Andrew George",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevAndrewGeorge/error-alerts.js/issues"
+  },
+  "homepage": "https://github.com/DevAndrewGeorge/error-alerts.js#readme",
+  "dependencies": {
+    "moment": "^2.23.0",
+    "sendmail": "^1.4.1"
+  }
+}
