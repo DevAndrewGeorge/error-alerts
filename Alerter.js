@@ -514,7 +514,12 @@ class Alerter {
 
   _one(error) {
     // key whose settings we will be editing
-    const key = error === this.ALL ? this.ALL : error.constructor.name;
+    let key = this.DEFAULT;
+    if (typeof error === "string") {
+      key = error;
+    } else if (error instanceof Error) {
+      key = error.constructor.name;
+    }
 
     // getting the settings object for the particular error
     // if it does not already exist, create it
