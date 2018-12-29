@@ -505,21 +505,20 @@ class Alerter {
   }
 
   _key(error) {
-    if (!error || !(error instanceof Error)) {
-      return this.DEFAULT;
-    } else {
-      return error.constructor.name in this._settings ? error.constructor.name : this.DEFAULT;
-    }
-  }
-
-  _one(error) {
-    // key whose settings we will be editing
     let key = this.DEFAULT;
     if (typeof error === "string") {
       key = error;
     } else if (error instanceof Error) {
       key = error.constructor.name;
     }
+
+    return key;
+  }
+
+  _one(error) {
+    // key whose settings we will be editing
+    let key = this._key(error);
+    
 
     // getting the settings object for the particular error
     // if it does not already exist, create it
