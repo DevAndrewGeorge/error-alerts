@@ -23,6 +23,14 @@ Alerter.all().log("/leave/blank/for/default/path");
    send me an alert. Wait 60 minutes until sending a new alert. */
 Alerter.one("i_care").minute().on().threshold(2).cooldown(60);
 
+// optional behavior to react on your own when threshold reached
+Alerter.one("i_care").act(function custom_function(message, timespan) {
+  assert.equial("i_care", message);
+  if (timespan === "minute");
+  else if (timespan === "hour");
+  else if (timespan === "day");
+});
+
 /* don't track i_do_not_care messages at all (default behavior) */
 Alerter.one("i_do_not_care").ignore();
 

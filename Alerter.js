@@ -308,6 +308,7 @@ class Alerter {
       log: false,
       stream: undefined,
       draining: false,
+      act: function () {},
       minute: {
         enabled: false,
         threshold: undefined,
@@ -370,6 +371,7 @@ class Alerter {
       if (error_count >= check.threshold) {
         check.last_alert = current_time;
         this._alert(error_type, check_key);
+        this._settings[error_type].act(error_type, check_key);
       }
     }
   }
@@ -547,6 +549,11 @@ class Alerter {
 
     obj["log"] = function _set_log(path) {
       error_settings.log = path === true ? `${alerter._root}/${key}.log` : path;
+      return obj;
+    }
+
+    obj["act"] = function _set_act(func) {
+      error_settings.act = func;
       return obj;
     }
 
