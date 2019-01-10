@@ -273,7 +273,7 @@ class Alerter {
    */
   tell(error) {
     // checking if there an actual error to log
-    if (!error || !(error instanceof Error)) {
+    if (!error) {
       return;
     }
 
@@ -294,6 +294,10 @@ class Alerter {
   }
 
   _alert(error_type, trigger_name) {
+    if (this._contacts.length === 0) {
+      return;
+    }
+
     sendmail({
       from: this._from,
       to: this._contacts.join(", "),
