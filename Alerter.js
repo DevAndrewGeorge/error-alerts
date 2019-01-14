@@ -514,7 +514,7 @@ class Alerter {
     let key = this.DEFAULT;
     if (typeof error === "string") {
       key = error;
-    } else if (error instanceof Error) {
+    } else if (error instanceof Error && error.constructor.name in this._settings) {
       key = error.constructor.name;
     }
 

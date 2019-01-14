@@ -1,6 +1,6 @@
 {
   "name": "error-alerts",
-  "version": "0.3.0",
+  "version": "0.3.3",
   "description": "",
   "main": "Alerter.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DevAndrewGeorge/error-alerts.js.git"
+    "url": "git+https://github.com/DevAndrewGeorge/error-alerts.git"
   },
   "author": "Andrew George",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DevAndrewGeorge/error-alerts.js/issues"
+    "url": "https://github.com/DevAndrewGeorge/error-alerts/issues"
   },
-  "homepage": "https://github.com/DevAndrewGeorge/error-alerts.js#readme",
+  "homepage": "https://github.com/DevAndrewGeorge/error-alerts#readme",
   "dependencies": {
     "moment": "^2.23.0",
     "sendmail": "^1.4.1"
